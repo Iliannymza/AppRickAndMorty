@@ -51,8 +51,9 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 
-    //Picasso
-    implementation("com.squareup.picasso:picasso:2.8")
+    // Dependencia de Glide para la carga de imágenes
+    implementation ("com.github.bumptech.glide:glide:4.16.0") // Usa la última versión estable
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0") // Necesario para algunas funcionalidades avanzadas y para evitar errores
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

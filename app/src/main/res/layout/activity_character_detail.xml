@@ -2,16 +2,105 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context=".ui.CharacterDetailActivity"> 
+    
+    <ImageView
+    android:id="@+id/detailImageViewCharacter"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/ic_launcher_background"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="24dp"
+    android:contentDescription="Character Image" />
 
     <TextView
+        android:id="@+id/detailTextViewName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailImageViewCharacter"
+        tools:text="Rick Sanchez" />
+
+    <TextView
+        android:id="@+id/detailTextViewStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailTextViewName"
+        tools:text="Status: Alive - Human" />
+
+    <TextView
+        android:id="@+id/detailTextViewSpecies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailTextViewStatus"
+        tools:text="Species: Human" />
+
+    <TextView
+        android:id="@+id/detailTextViewGender"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:android="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailTextViewSpecies"
+        tools:text="Gender: Male" />
+
+    <TextView
+        android:id="@+id/detailTextViewOrigin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailTextViewGender"
+        tools:text="Origin: Earth (C-137)" />
+
+    <TextView
+        android:id="@+id/detailTextViewLastLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailTextViewOrigin"
+        tools:text="Last Location: Citadel of Ricks" />
+
+    <Button
+        android:id="@+id/buttonShowEpisodes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Characters!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Ver Episodios"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailTextViewLastLocation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
