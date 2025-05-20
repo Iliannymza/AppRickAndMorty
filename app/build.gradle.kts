@@ -45,6 +45,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.play.services.awareness)
     // Retrofit
     val retrofitVersion = "2.11.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")

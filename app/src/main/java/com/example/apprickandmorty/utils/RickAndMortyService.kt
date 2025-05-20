@@ -1,24 +1,32 @@
 package com.example.superheroe.utils
 
-import com.example.superheroe.data.Superheroe
-import com.example.superheroe.data.SuperheroeSearchResponse
+import com.example.apprickandmorty.data.CharacterResponse
+import com.example.apprickandmorty.data.EpisodeResponse
+import com.google.android.gms.awareness.snapshot.LocationResponse
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface RickAndMortyService {
+    @GET("character")
+    suspend fun getCharacters(@Query("page") page: Int = 1): CharacterResponse
 
-    @GET("search/{name}")
-    suspend fun findSuperheroesByName(@Path("name") name: String): SuperheroeSearchResponse
+    @GET("character/{id}")
+    suspend fun getCharacter(@Path("id") id: Int): Character
 
-    @GET("{charcter-id}")
-    suspend fun findSuperheroById(@Path("charcter-id") id: String): Superheroe
+    @GET("location")
+    fun getLocations(@Query("page") page: Int? = 1): LocationResponse
+
+    @GET("episode")
+    fun getEpisodes(@Query("page") page: Int? = 1): EpisodeResponse
 
     companion object {
         fun getInstance(): RickAndMortyService {
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://superheroapi.com/api/13099c4df9a70d72397e10f0f715d8d7/")
+                .baseUrl("https://rickandmortyapi.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
